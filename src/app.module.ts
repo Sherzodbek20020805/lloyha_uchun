@@ -2,7 +2,7 @@
 
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ShiftModule, UsersModule } from './index'
+import { ShiftModule, UserModule } from './index'
 import { User } from './users/entities/user.entity';
 import { Shift } from './shift/entities/shift.entity';
 
@@ -18,7 +18,7 @@ import { Shift } from './shift/entities/shift.entity';
       database: process.env.DB_NAME || 'n19',
       synchronize: true, 
     }),
-    UsersModule,
+    UserModule,
     ShiftModule,
   ],
 })
