@@ -5,7 +5,7 @@ import {
   CreateDateColumn,
   OneToMany,
 } from 'typeorm';
-import { Shift } from '../../shift/entities/shift.entity'; // ✅
+import { Shift } from '../../shift/entities/shift.entity';
 import { UserRole } from '../../Enam/user-role.enum';
 
 @Entity('users')

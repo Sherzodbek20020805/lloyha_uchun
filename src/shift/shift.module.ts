@@ -1,4 +1,4 @@
-// src/shift/shift.module.ts
+
 import { Module, forwardRef } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Shift } from './entities/shift.entity';

@@ -1,4 +1,4 @@
-// src/users/user.module.ts
+
 import { Module, forwardRef } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';

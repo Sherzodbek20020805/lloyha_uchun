@@ -1,4 +1,4 @@
-// src/shift/dto/update-shift.dto.ts
+
 import { IsDateString, IsOptional } from 'class-validator';
 
 export class UpdateShiftDto {
