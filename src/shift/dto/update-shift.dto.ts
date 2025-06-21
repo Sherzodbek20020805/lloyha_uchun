@@ -1,4 +1,12 @@
-import { PartialType } from '@nestjs/swagger';
-import { CreateShiftDto } from './create-shift.dto';
+// src/shifts/dto/update-shift.dto.ts
+import { IsDateString, IsOptional } from 'class-validator';
 
-export class UpdateShiftDto extends PartialType(CreateShiftDto) {}
+export class UpdateShiftDto {
+  @IsOptional()
+  @IsDateString()
+  start_time?: string;
+
+  @IsOptional()
+  @IsDateString()
+  end_time?: string;
+}

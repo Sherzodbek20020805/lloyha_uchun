@@ -1,15 +1,25 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+// src/shifts/shift.controller.ts
+import {
+  Controller,
+  Post,
+  Get,
+  Param,
+  Body,
+  Patch,
+  Delete,
+  ParseIntPipe,
+} from '@nestjs/common';
 import { ShiftService } from './shift.service';
 import { CreateShiftDto } from './dto/create-shift.dto';
 import { UpdateShiftDto } from './dto/update-shift.dto';
 
-@Controller('shift')
+@Controller('shifts')
 export class ShiftController {
   constructor(private readonly shiftService: ShiftService) {}
 
   @Post()
-  create(@Body() createShiftDto: CreateShiftDto) {
-    return this.shiftService.create(createShiftDto);
+  create(@Body() dto: CreateShiftDto) {
+    return this.shiftService.create(dto);
   }
 
   @Get()
@@ -18,17 +28,20 @@ export class ShiftController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.shiftService.findOne(+id);
+  findOne(@Param('id', ParseIntPipe) id: number) {
+    return this.shiftService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateShiftDto: UpdateShiftDto) {
-    return this.shiftService.update(+id, updateShiftDto);
+  update(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() dto: UpdateShiftDto,
+  ) {
+    return this.shiftService.update(id, dto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.shiftService.remove(+id);
+  remove(@Param('id', ParseIntPipe) id: number) {
+    return this.shiftService.remove(id);
   }
 }
