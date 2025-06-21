@@ -1,5 +1,5 @@
-// src/shifts/dto/create-shift.dto.ts
-import { IsDateString, IsUUID } from 'class-validator';
+// src/shift/dto/create-shift.dto.ts
+import { IsUUID, IsDateString } from 'class-validator';
 
 export class CreateShiftDto {
   @IsUUID()

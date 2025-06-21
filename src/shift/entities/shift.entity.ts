@@ -1,5 +1,6 @@
+// src/shift/entities/shift.entity.ts
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
-import { User } from '../../users';
+import { User } from '../../users/entities/user.entity'; 
 
 @Entity('shifts')
 export class Shift {

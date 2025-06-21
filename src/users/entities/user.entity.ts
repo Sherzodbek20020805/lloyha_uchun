@@ -1,6 +1,11 @@
-// src/users/user.entity.ts
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, OneToMany } from 'typeorm';
-import { Shift } from '../../shift';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+  OneToMany,
+} from 'typeorm';
+import { Shift } from '../../shift/entities/shift.entity'; // ✅
 import { UserRole } from '../../Enam/user-role.enum';
 
 @Entity('users')
@@ -8,7 +13,7 @@ export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ length: 100 })
+  @Column({ length: 100, nullable: true }) 
   full_name: string;
 
   @Column({ length: 100, unique: true })
